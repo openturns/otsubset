@@ -1,0 +1,134 @@
+% 
+% Permission is granted to copy, distribute and/or modify this document
+% under the terms of the GNU Free Documentation License, Version 1.2
+% or any later version published by the Free Software Foundation;
+% with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+% Texts.  A copy of the license is included in the section entitled "GNU
+% Free Documentation License".
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{User Manual}
+
+This section gives an exhaustive presentation of the objects and functions provided by the $subset$ module, in the alphabetic order.
+
+\subsection{SubsetSampling}
+
+This class inherits from the Simulation class, please refer to the Simulation class documentation for common methods.\\
+Note that this algorithm cannot be controlled by means of a maximum coefficient of variation.\\
+
+\begin{description}
+
+  \item[Usage :] \rule{0pt}{1em}
+    \begin{description}
+    \item $SubsetSampling(event)$
+    \item $SubsetSampling(event, proposalRange)$
+    \item $SubsetSampling(event, proposalRange, targetProbability)$
+    \end{description}
+
+  \item[Arguments :]  \rule{0pt}{1em}
+    \begin{description}
+    \item $event$ : an Event, the event we want to compute the probability of
+    \item $proposalRange$ : a NumericalScalar, the range of the uniform proposal as distribution of the random walk (default$=2.0$)
+    \item $targetProbability$ : a NumericalScalar, the probability estimate of each conditional domain $P(F_i|F_{i-1})$ (default$=0.1$)
+    \end{description}
+
+  \item[Value :] a SubsetSampling
+
+  \item[Details :]  \rule{0pt}{1em}
+    \begin{description}
+    \item Like all the simulation algorithms, the number of samples per step is determined by $maximumOuterSampling*blockSize$ (default $1000 \times 1$)
+    \item Like usual, use the $getResult$ method to access the computed results.
+    \end{description}
+
+  \item $getProposalRange$
+    \begin{description}
+    \item[Usage :] $getProposalRange()$
+    \item[Arguments :] no argument
+    \item[Value :] a NumericalScalar, the range of the uniform proposal as distribution of the random walk
+    \end{description}
+    \bigskip
+
+  \item $getTargetProbability$
+    \begin{description}
+    \item[Usage :] $getTargetProbability()$
+    \item[Arguments :] no argument
+    \item[Value :] a NumericalScalar, the probability estimate of each conditional domain $P(F_i|F_{i-1})$
+    \end{description}
+    \bigskip
+
+  \item $getNumberOfSteps$
+    \begin{description}
+    \item[Usage :] $getNumberOfSteps()$
+    \item[Arguments :] no argument
+    \item[Value :] an UnsignedLong, the number of subset steps
+    \end{description}
+    \bigskip
+
+  \item $getThresholdPerStep$
+    \begin{description}
+    \item[Usage :] $getThresholdPerStep()$
+    \item[Arguments :] no argument
+    \item[Value :] a NumericalPoint, the intermediate threshold values
+    \end{description}
+    \bigskip
+
+  \item $getGammaPerStep$
+    \begin{description}
+    \item[Usage :] $getGammaPerStep()$
+    \item[Arguments :] no argument
+    \item[Value :] a NumericalPoint, the intermediate autocorrelation values
+    \end{description}
+    \bigskip  
+    
+   \item $getCoefficientOfVariationPerStep$
+    \begin{description}
+    \item[Usage :] $getCoefficientOfVariationPerStep()$
+    \item[Arguments :] no argument
+    \item[Value :] a NumericalPoint, the intermediate c.o.v. values
+    \end{description}
+    \bigskip  
+      
+  \item $getProbabilityEstimatePerStep$
+    \begin{description}
+    \item[Usage :] $getProbabilityEstimatePerStep()$
+    \item[Arguments :] no argument
+    \item[Value :] a NumericalPoint, the intermediate pf values
+    \end{description}
+    \bigskip 
+    
+  \item $setKeepEventSample$
+    \begin{description}
+    \item[Usage :] $setKeepEventSample(keepEventSample)$
+    \item[Arguments :] a boolean keepEventSample, deciding whether we keep the event samples
+    \item[Value :] none
+    \end{description}
+    \bigskip   
+    
+  \item $getEventInputSample$
+    \begin{description}
+    \item[Usage :] $getEventInputSample()$
+    \item[Arguments :] no argument
+    \item[Value :] a NumericalSample, the input sample values. See $setKeepEventSample$.
+    \end{description}
+    \bigskip 
+    
+  \item $getEventOutputSample$
+    \begin{description}
+    \item[Usage :] $getEventOutputSample()$
+    \item[Arguments :] no argument
+    \item[Value :] a NumericalSample, the output sample values. See $setKeepEventSample$.
+    \end{description}
+    \bigskip 
+    
+The methods $getProposalRange$, $getTargetProbability$ have their corresponding $setMethod$.
+
+\item[Links] \rule{0pt}{1em}
+\end{description}
+
+
+\newpage \subsection{SubsetSamplingResult}
+
+This class inherits from the SimulationResultImplementation class, please refer to the SimulationResult class documentation for common methods, \dots \\
+Note that the $outersampling$ result can exceed the algorithms $maximumOuterSampling$, as the total number of samples is determined by the number of steps, so that 
+$outersampling = maximumOuterSampling \times numberOfSteps$.\\
+

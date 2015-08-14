@@ -1,0 +1,40 @@
+#                                               -*- cmake -*-
+#
+#  OTSubsetConfig.cmake(.in)
+#
+#  Find OTSubset includes and libraries
+#
+#  (C) Copyright 2008-2013 Phimeca
+#
+
+# Use the following variables to compile and link against OTSubset:
+#  OTSUBSET_FOUND          - True if OTSubset was found on your system
+#  OTSUBSET_USE_FILE       - The file making OTSubset usable
+#  OTSUBSET_DEFINITIONS    - Definitions needed to build with OTSubset
+#  OTSUBSET_INCLUDE_DIRS   - List of directories where OTSubset' header file are
+#  OTSUBSET_LIBRARY        - Library name
+#  OTSUBSET_LIBRARIES      - List of libraries to link against
+#  OTSUBSET_LIBRARY_DIRS   - List of directories containing OTSubset' libraries
+#  OTSUBSET_ROOT_DIR       - The base directory of OTSubset
+#  OTSUBSET_VERSION_STRING - A human-readable string containing the version
+#  OTSUBSET_VERSION_MAJOR  - The major version of OTSubset
+#  OTSUBSET_VERSION_MINOR  - The minor version of OTSubset
+#  OTSUBSET_VERSION_PATCH  - The patch version of OTSubset
+
+set ( OTSUBSET_FOUND 1 )
+set ( OTSUBSET_USE_FILE     "@OTSUBSET_USE_FILE@" )
+
+set ( OTSUBSET_DEFINITIONS  "@OTSUBSET_DEFINITIONS@" )
+set ( OTSUBSET_INCLUDE_DIR  "@OTSUBSET_INCLUDE_DIR@" )
+set ( OTSUBSET_INCLUDE_DIRS "@OTSUBSET_INCLUDE_DIRS@" )
+set ( OTSUBSET_LIBRARY      "@OTSUBSET_LIBRARY@" )
+set ( OTSUBSET_LIBRARIES    "@OTSUBSET_LIBRARIES@" )
+set ( OTSUBSET_LIBRARY_DIRS "@OTSUBSET_LIBRARY_DIRS@" )
+set ( OTSUBSET_ROOT_DIR     "@OTSUBSET_ROOT_DIR@" )
+
+set ( OTSUBSET_VERSION_STRING "@OTSUBSET_VERSION_STRING@" )
+set ( OTSUBSET_VERSION_MAJOR  "@OTSUBSET_VERSION_MAJOR@" )
+set ( OTSUBSET_VERSION_MINOR  "@OTSUBSET_VERSION_MINOR@" )
+set ( OTSUBSET_VERSION_PATCH  "@OTSUBSET_VERSION_PATCH@" )
+
+set (OTSUBSET_PYTHON@PYTHON_VERSION_MAJOR@_MODULE_PATH "@OTSUBSET_PYTHON_MODULE_PATH@")

@@ -1,0 +1,90 @@
+% 
+% Copyright 2009-2012 Phimeca
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Validation}
+
+This section aims at exposing academical benchmarks from which the numerical methods can be guaranteed as robust.\\
+We will focus on showing the accuracy int the case of low probabilities, and also exposing that the result is reached for the same cov at a lower limit-state evaluation cost.\\
+The method will be compared to crude MC on various benchmarks for which we will expose the number of samples $N$, the failure probability $P_F$, the associated reliability inde $\beta$ and the coefficient of variation $Cov$.\\
+
+\subsection{R-S}
+
+The classical constraint-resistance example and the associated results are gathered from F. Deheeger \textit{Couplage mecano-fiabiliste : $^2$SMART - methodologie d'apprentissage en fiabilite}.
+
+\subsubsection{Problem statement}
+
+$
+\begin{array}{lrrr}
+Variable & Distribution & Mean & \text{Standard deviation} \\
+\hline
+R & Normal   & 7. & 1.0 \\
+S & Normal   & 2. & 1.0 \\
+\end{array}
+$
+\vspace{10mm}
+
+
+Limit-state:\\
+\begin{eqnarray*}
+  g = R - S\\
+  g < 0
+\end{eqnarray*}
+
+\subsubsection{Results}
+
+$
+\begin{array}{cccc}
+            & Exact & MC & Subset \\
+\hline
+N & - & 10^6   & 4 \times 10^4 \\
+P_F & 2.0\times10^{-4} & 2.2 \times10^{-4}  & 2.03 \times10^{-4}\\
+\beta & 3.54 & 2.86  & 3.537 \\
+Cov & - & 0.08  & 0.086 \\
+\end{array}
+$
+
+
+
+\newpage
+\subsection{Waarts system series}
+
+The waarts test is taken from P. H. Waarts \textit{Structural reliability using finite element analysis}, 2000.
+
+\subsubsection{Problem statement}
+
+$
+\begin{array}{lrrr}
+Variable & Distribution & Mean & \text{Standard deviation} \\
+\hline
+u1 & Normal   & 0. & 1.0 \\
+u2 & Normal   & 0. & 1.0 \\
+\end{array}
+$
+\vspace{10mm}
+
+Limit-state:\\
+\begin{eqnarray*}
+  g1 = 0.1 * (u1 - u2)^2 - \frac{u1 + u2}{\sqrt{2}} + 3\\
+  g2 = 0.1 * (u1 - u2)^2 + \frac{u1 + u2}{\sqrt{2}} + 3\\
+  g3 = 3.0, u1 - u2 + 3.5 \sqrt{2}\\
+  g4 = -u1 + u2 + 3.5 \sqrt{2}\\
+  g = min(g1, g2, g3, g4)\\
+  g < 0
+\end{eqnarray*}
+
+
+\subsubsection{Results}
+
+$
+\begin{array}{ccc}
+            & MC & Subset \\
+\hline
+N & 10^6   & 4\times 10^4 \\
+P_F & 2.216 \times10^{-3}  & 2.106 \times10^{-3} \\
+\beta & 2.86 & 2.862 \\
+Cov & 0.021  & 0.06348 \\
+\end{array}
+$
+

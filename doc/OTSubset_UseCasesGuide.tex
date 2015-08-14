@@ -1,0 +1,89 @@
+% 
+% Permission is granted to copy, distribute and/or modify this document
+% under the terms of the GNU Free Documentation License, Version 1.2
+% or any later version published by the Free Software Foundation;
+% with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+% Texts.  A copy of the license is included in the section entitled "GNU
+% Free Documentation License".
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Use Cases Guide}
+
+This section presents the main functionalities of the module $subset$ in their context.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Which python modules to import ?}
+
+In order to use the functionalities described in this documentation, it is necessary to import  : 
+\begin{itemize}
+   \item the $otsubset$ module.
+\end{itemize}
+
+Python  script for this use case :
+\begin{lstlisting}
+from otsubset import *
+\end{lstlisting}
+
+
+
+\subsection{Create a subset simulation algorithm}
+
+Details on the SubsetSampling object can be found in the UserManual at the next chapter.\\
+
+Details on simulation algorithms can be found in the Reference Guide (\href{OpenTURNS_ReferenceGuide.pdf}{see files Reference Guide - Step C -- Estimating the probability of an event using Sampling} and files around).\\
+
+
+\requirements{
+  \begin{description}
+  \item[$\bullet$] the event we want to evaluate the probability : {\itshape myEvent}
+  \item[type:] Event
+  \item[$\bullet$] the target conditional probability of each subset domain
+  \item[type:] NumericalScalar
+  \item[$\bullet$] the width of the MCMC random walk uniform distribution
+  \item[type:] NumericalScalar
+  \item[$\bullet$] the number of samples per step
+  \item[type:] UnsignedLong
+  \end{description}
+}
+{
+  \begin{description}
+  \item[$\bullet$] the SubsetSampling simulation algorithm : {\itshape mySSAlgo}
+  \item[type:] Simulation
+  \item[$\bullet$] the SubsetSampling simulation result : {\itshape myResult}
+  \item[type:] SimulationResult
+  \end{description}
+}
+
+\newpage
+Python  script for this UseCase :
+
+\begin{lstlisting}
+  # Create a Subset Sampling algorithm
+  mySSAlgo = SubsetSampling(myEvent)
+
+  # Change the target conditional probability of each subset domain
+  # mySSAlgo.setTargetProbability(0.9)
+
+  # Set the width of the MCMC random walk uniform distribution
+  mySSAlgo.setProposalRange(1.8)
+
+  # This allows to control the number of samples per step
+  mySSAlgo.setMaximumOuterSampling(10000)
+
+  # Run the algorithm
+  mySSAlgo.run()
+
+  # Retrieve the result
+  myResult = mySSAlgo.getResult()
+  
+  # Extract some results
+  print 'Pf:', myResult.getEventProbability()
+  print 'Cov:', myResult.getCoefficientOfVariation()
+  print 'Number of steps:', myResult.getNumberOfSteps()
+\end{lstlisting}
+
