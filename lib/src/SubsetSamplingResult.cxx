@@ -32,7 +32,7 @@ namespace OTSubset
 
 CLASSNAMEINIT(SubsetSamplingResult);
 
-static Factory<SubsetSamplingResult> RegisteredFactory("SubsetSamplingResult");
+static Factory<SubsetSamplingResult> RegisteredFactory;
 
 
 /* Default constructor */
