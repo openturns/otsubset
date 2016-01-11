@@ -28,7 +28,7 @@ namespace OTSubset {
 
 CLASSNAMEINIT(SubsetSampling)
 
-static Factory<SubsetSampling> RegisteredFactory("SubsetSampling");
+static Factory<SubsetSampling> RegisteredFactory;
 
 const UnsignedInteger SubsetSampling::DefaultMaximumOuterSampling = 10000;
 const NumericalScalar SubsetSampling::DefaultTargetProbability = 0.1;
