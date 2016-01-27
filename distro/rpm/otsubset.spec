@@ -15,7 +15,7 @@ FFLAGS="${FFLAGS:-%optflags}" ; export FFLAGS ; \
 -DBUILD_SHARED_LIBS:BOOL=ON
 
 Name:           otsubset
-Version:        1.2h
+Version:        1.2i
 Release:        0%{?dist}
 Summary:        Subset module
 Group:          System Environment/Libraries
