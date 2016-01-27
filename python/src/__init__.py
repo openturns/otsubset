@@ -15,4 +15,4 @@ if sys.platform.startswith('win'):
     
 from .otsubset import *
 
-__version__ = '1.2h'
+__version__ = '1.2i'

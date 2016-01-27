@@ -15,7 +15,7 @@ FFLAGS="${FFLAGS:-%optflags}" ; export FFLAGS ; \
 -DBUILD_SHARED_LIBS:BOOL=ON
 
 Name:           otsubset
-Version:        1.2h
+Version:        1.2i
 Release:        0%{?dist}
 Summary:        Subset module
 Group:          System Environment/Libraries
@@ -72,8 +72,8 @@ Python textual interface to OTSubset uncertainty library
 %setup -q
 
 %build
-%cmake -DCMAKE_INSTALL_PREFIX=/usr \
-       -DINSTALL_DESTDIR:PATH=%{buildroot} \
+%cmake -DINSTALL_DESTDIR:PATH=%{buildroot} \
+       -DCMAKE_SKIP_INSTALL_RPATH:BOOL=ON \
        -DBUILD_DOC=OFF
 make %{?_smp_mflags}
 
