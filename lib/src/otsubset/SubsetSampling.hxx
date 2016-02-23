@@ -1,6 +1,5 @@
 //                                               -*- C++ -*-
 /**
- *  @file  SubsetSampling.hxx
  *  @brief Subset simulation method
  *
  *  Copyright 2012-2013 Phimeca
@@ -22,9 +21,9 @@
 #ifndef OTSUBSET_SUBSETSAMPLING_HXX
 #define OTSUBSET_SUBSETSAMPLING_HXX
 
-#include "Simulation.hxx"
-#include "StandardEvent.hxx"
-#include "OTSubsetprivate.hxx"
+#include <Simulation.hxx>
+#include <StandardEvent.hxx>
+#include "otsubset/OTSubsetprivate.hxx"
 
 namespace OTSubset {
 

@@ -1,6 +1,5 @@
 //                                               -*- C++ -*-
 /**
- *  @file  SubsetSampling.cxx
  *  @brief Subset simulation method
  *
  *  Copyright 2012-2013 Phimeca
@@ -19,8 +18,8 @@
  *  along with this library.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-#include "SubsetSampling.hxx"
-#include "SubsetSamplingResult.hxx"
+#include "otsubset/SubsetSampling.hxx"
+#include "otsubset/SubsetSamplingResult.hxx"
 
 using namespace OT;
 

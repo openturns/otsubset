@@ -1,7 +1,6 @@
 #include <iostream>
-// OT includes
-#include "OT.hxx"
-#include "SubsetSampling.hxx"
+#include <OT.hxx>
+#include "otsubset/SubsetSampling.hxx"
 
 using namespace OT;
 using namespace OTSubset;
