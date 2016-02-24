@@ -1,6 +1,5 @@
 //                                               -*- C++ -*-
 /**
- *  @file  SubsetSamplingResult.cxx
  *  @brief Subset sampling result
  *
  *  Copyright 2012-2013 Phimeca
@@ -19,7 +18,7 @@
  *  along with this library.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-#include "SubsetSamplingResult.hxx"
+#include "otsubset/SubsetSamplingResult.hxx"
 
 using namespace OT;
 
@@ -27,8 +26,8 @@ namespace OTSubset
 {
 
 /*
-  * @class SubsetSamplingResult
-  */
+ * @class SubsetSamplingResult
+ */
 
 CLASSNAMEINIT(SubsetSamplingResult);
 

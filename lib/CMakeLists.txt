@@ -4,6 +4,6 @@ add_subdirectory ( src )
 add_subdirectory ( test )
 
 install ( FILES ${HEADERFILES}
-          DESTINATION ${OTSUBSET_INCLUDE_PATH}
+          DESTINATION ${OTSUBSET_INCLUDE_PATH}/${PACKAGE_NAME}
         )
 

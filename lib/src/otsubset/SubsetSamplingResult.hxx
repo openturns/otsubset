@@ -1,6 +1,5 @@
 //                                               -*- C++ -*-
 /**
- *  @file  SubsetSamplingResult.hxx
  *  @brief Subset sampling result
  *
  *  Copyright 2012-2013 Phimeca
@@ -22,8 +21,8 @@
 #ifndef OTSUBSET_SUBSETSAMPLINGRESULT_HXX
 #define OTSUBSET_SUBSETSAMPLINGRESULT_HXX
 
-#include "OT.hxx"
-#include "OTSubsetprivate.hxx"
+#include <OT.hxx>
+#include "otsubset/OTSubsetprivate.hxx"
 
 namespace OTSubset {
 
